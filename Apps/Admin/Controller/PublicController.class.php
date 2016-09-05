@@ -1,24 +1,26 @@
 <?php
 namespace Admin\Controller;
+
 use Think\Controller;
 
-class PublicController extends Controller 
+class PublicController extends Controller
 {
     public function index()
     {
-        header("Location:".__MODULE__."/Public/login");
+        header("Location:/Public/login");
     }
 
     public function login()
     {
+        if (IS_POST) {
+            $_POST['username'] = I('post.username');
+            $Admin = D('admin');
+            if (!$Admin->create()) {
+                $this->error($Admin->getError());
+            } else{
+                var_dump($_POST);die;
+            }
+        }
     	$this->display();
-    }
-
-    public function verify()
-    {
-    	$Verify = new \Think\Verify();
-		// 开启验证码背景图片功能 随机使用 ThinkPHP/Library/Think/Verify/bgs 目录下面的图片
-		$Verify->useImgBg = true; 
-		$Verify->entry();
     }
 }
