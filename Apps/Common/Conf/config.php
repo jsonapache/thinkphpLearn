@@ -22,7 +22,8 @@ return array(
     /* 过滤设置 */
     'DEFAULT_FILTER' => 'strip_tags,htmlspecialchars',
 
-'LANG_SWITCH_ON' => true,
+    /* 多语言开关 */
+    'LANG_SWITCH_ON' => true,
 
     'SHOW_PAGE_TRACE' => true,
 );

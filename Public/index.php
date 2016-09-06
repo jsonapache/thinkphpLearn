@@ -22,7 +22,7 @@ define('APP_DEBUG',true);
 // 定义应用目录
 define('APP_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Apps' . DIRECTORY_SEPARATOR);
 define('RUNTIME_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Runtime' . DIRECTORY_SEPARATOR);
-define('__ROOT__', dirname(__DIR__) . DIRECTORY_SEPARATOR);
+define('ROOT_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 
 // 引入ThinkPHP入口文件
 require '../Framework/ThinkPHP.php';
