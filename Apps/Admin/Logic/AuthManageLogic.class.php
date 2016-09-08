@@ -3,22 +3,21 @@ namespace Admin\Logic;
 
 class AuthManageLogic
 {
-    protected $admin_model;
+    public function getGroupTree($data, $pid = 0, $level = 0) {
+        $group_tree = array();
 
-    protected $auth_group_model;
+        if (is_array($data)) {
 
-    protected $auth_group_access_model;
+            foreach ($data as $key => $value) {
+                $value['level'] = $level;
+                $group_tree[count($group_tree)] = $value;
+                unset($data[$key]);
+                $sub_tree = $this->getGroupTree($data, $value['id'], $level+1);
+                if(is_array($sub_tree)) $group_tree = array_merge($group_tree, $sub_tree);
+            }
 
-    protected $auth_rule_model;
+        }
 
-    protected function __construct() {
-        $this->admin_model = M('admin');
-        $this->auth_group_model = M('auth_group');
-        $this->auth_group_access_model = M('auth_group_access');
-        $this->auth_rule_model = M('auth_rule');
-    }
-
-    public function lists() {
-
+        return $group_tree;
     }
 }
