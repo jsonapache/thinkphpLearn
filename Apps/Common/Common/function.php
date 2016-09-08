@@ -9,7 +9,7 @@ function is_login() {
     if (empty($user)) {
         return 0;
     } else {
-        return session('user_auth_sign') == data_auth_sign($user) ? $user : 0;
+        return session('user_auth_sign') == data_auth_sign($user) ? $user['id'] : 0;
     }
 }
 
@@ -28,4 +28,14 @@ function data_auth_sign($data) {
     $code = http_build_query($data); //url编码并生成query字符串
     $sign = sha1($code); //生成签名
     return $sign;
+}
+
+/**
+ * 处理插件钩子
+ * @param string $hook   钩子名称
+ * @param mixed $params 传入参数
+ * @return void
+ */
+function hook($hook,$params=array()){
+    \Think\Hook::listen($hook,$params);
 }

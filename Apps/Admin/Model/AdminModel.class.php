@@ -1,9 +1,9 @@
 <?php
 namespace Admin\Model;
 
-use Think\Model;
+use Common\Model\BaseModel;
 
-class AdminModel extends Model
+class AdminModel extends BaseModel
 {
     protected $tableName = 'admin';
 

@@ -2,4 +2,5 @@
 return array(
     'view_filter' => array('Behavior\TokenBuildBehavior'),
     'app_begin' => array('Behavior\CheckLangBehavior'),
+    'login' => array('Admin\Behaviors\LoginBehavior'),
 );

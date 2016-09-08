@@ -1,20 +1,20 @@
 <?php
 namespace Admin\Controller;
 
-use Think\Controller;
+use Common\Controller\BaseController;
 
 /**
  * 后台基类控制器
  * @author shentao <13751837857@163.com>
  */
-class CommonController extends Controller
+class AdminController extends BaseController
 {
     /**
      * 后台控制器初始化
      *
      */
     protected function _initialize() {
-        if (defined(UID)) return ;
+        parent::_initialize();
         define('UID', is_login());
         if (!UID) {
             $this->redirect('public/index');

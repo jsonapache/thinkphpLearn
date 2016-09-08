@@ -3,6 +3,9 @@ define('UC_SALT_KEY', '#8A%FApq3nOuiyhN7YluT6k6RtNk$Vsv');
 return array(
 	/* SESSION设置 */
 	'SESSION_PREFIX' => 'admin',
+    'SESSION_OPTIONS' => array(
+        'expire' => 3600,
+    ),
 
 	/* 模板设置 */
 	'TMPL_PARSE_STRING' => array(
@@ -21,4 +24,5 @@ return array(
     /* 布局模板设置 */
     'LAYOUT_ON' => true,
     'LAYOUT_NAME' => 'Layout/admin',
+
 );

@@ -34,8 +34,6 @@ class PublicController extends Controller
                     }
                     $this->error($error);
                 } else {
-                    session('user_auth', $uid);
-                    session('user_auth_sign', data_auth_sign($uid));
                     $this->redirect('index/index');
                 }
             }
