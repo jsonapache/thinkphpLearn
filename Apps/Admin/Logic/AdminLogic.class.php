@@ -34,15 +34,15 @@ class AdminLogic
 
                 //记录用户登录信息
                 $data = array(
-                    'id' => $user['id'],
+                    'uid' => $user['uid'],
                     'username' => $user['username'],
                     'prev_login_time' => $user['admin_login_time'],
                 );
                 session('user_auth', $data);
                 session('user_auth_sign', data_auth_sign($data));
 
-                $this->updateLogin($user['id']); //更新用户登录信息
-                return $user['id']; //登录成功，返回用户ID
+                $this->updateLogin($user['uid']); //更新用户登录信息
+                return $user['uid']; //登录成功，返回用户ID
             } else {
                 return -2; //密码错误
             }
@@ -53,7 +53,7 @@ class AdminLogic
 
     protected function updateLogin($uid) {
         $data = array(
-            'id' => $uid,
+            'uid' => $uid,
             'admin_login_time' => NOW_TIME,
             'admin_login_num'  => array('exp', 'admin_login_num+1'),
         );

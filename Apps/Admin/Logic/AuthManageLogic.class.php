@@ -3,6 +3,9 @@ namespace Admin\Logic;
 
 class AuthManageLogic
 {
+    public function lists($model, $where = null) {
+
+    }
     public function getGroupTree($data, $pid = 0, $level = 0) {
         $group_tree = array();
 
