@@ -7,14 +7,6 @@ return array(
         'expire' => 3600,
     ),
 
-	/* 模板设置 */
-	'TMPL_PARSE_STRING' => array(
-        '__PUBLIC__' => '/assets/Common',
-        '__PLUGINS__' => '/assets/plugins',
-		'__ADMIN__' => '/assets/Admin',
-        '__ASSETS__' => '/assets',
-	),
-
     /* 表单令牌设置 */
     'TOKEN_ON'      =>    true,  // 是否开启令牌验证 默认关闭
     'TOKEN_NAME'    =>    'token',    // 令牌验证的表单隐藏字段名称，默认为__hash__

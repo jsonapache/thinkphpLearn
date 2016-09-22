@@ -19,4 +19,12 @@ return array(
 
     /* 扩展配置 */
     'LOAD_EXT_CONFIG' => 'db,webconfig',
+
+    /* 模板设置 */
+    'TMPL_PARSE_STRING' => array(
+        '__IMAGES__' => '/images',
+        '__CSS__' => '/css',
+        '__JS__' => '/js',
+        '__FONTAWESOME__' => '/font-awesome',
+    ),
 );
